@@ -1,0 +1,2 @@
+Test the cache locality of square matrice matrix multipilication.
+Use this to understand how cache-friendlines can improve performance significantly 

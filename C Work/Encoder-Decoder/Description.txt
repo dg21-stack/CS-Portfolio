@@ -1,0 +1,27 @@
+Description: 
+
+implements a simple encoding and decoding scheme for ASCII text.  Each character in the text (including whitespace characters) is represented as a variably-sized group of single-digit decimal integers.  
+The first number in the group gives the number of numbers in the rest of the group. 
+ Each of the rest of the numbers corresponds to a set bit in a char value represented by the group. 
+ The bits are numbered from 0 to 7 going from lowest to highest order.  
+For example, the character 'A', which has ASCII code 65 (in decimal notation), would be encoded as:
+
+206
+
+—meaning that there are two bits set—the 0th bit and the 6th bit. Following is an encoding of "BC":
+
+2163016213
+
+The first character has two bits set: 1 and 6:
+
+0100 0010
+
+This gives hexadecimal 0x42, which is character 'B'.  Next we have a character code with three bits set: 0, 1, and 6:
+
+0100 0011 = 0x43 = 'C'
+
+Finally, we have
+
+0000 1010 = 0x0a = '\n'
+
+The encoding does not include a final NULL character because the file reading routine (to be covered in class) does not read a final NULL.

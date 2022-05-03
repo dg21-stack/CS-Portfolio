@@ -1,0 +1,8 @@
+Description: 
+Create a few custom signal handlers and your own user-level signal handler table within your own user application to work in a way similar to how the kernel's default signal handler table works. 
+ In so doing, you will temporarily redefine your application's behavior for the first four Linux/POSIX (and Mac OS) signals:
+
+HUP—"hang up"—when the terminal hangs up
+INT—"interrupt"—Ctl-C from the command line
+QUIT—"quit"—a request to cause the application to quit and save state information (a "core dump") to help in debugging.
+ILL — "illegal" — an illegal instruction, such as a privileged hardware instruction issued while the CPU is in user mode.
