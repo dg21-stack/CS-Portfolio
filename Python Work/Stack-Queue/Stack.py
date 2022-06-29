@@ -124,9 +124,10 @@ class LLStack():
         self.tail = node 
     
     def pop(self):
-        value = self.tail.value 
-        self.tail = self.tail.prev 
-        self.tail.next = None
+        value = self.tail.value
+        if self.tail.prev is not None:
+            self.tail = self.tail.prev 
+            self.tail.next = None
         return value
     
     def peek(self):
